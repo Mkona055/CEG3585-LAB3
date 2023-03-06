@@ -14,9 +14,11 @@ class Client:
 
     def encodeB8Z(self,message):
         pulse = "+"
-        encodedMessage = ""
+        encodedMessage = None
         i = 0
         while i < len(message):
+            if i == 0 :
+                encodedMessage = ""
             if message[i] == "1":
                 if i != 0 :   
                     pulse = self.togglePulse(pulse)
